@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @education.user_id %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @education.course_id %>
+</p>
+
+<p>
+  <strong>University:</strong>
+  <%= @education.university_id %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @education.startDate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @education.endDate %>
+</p>
+
+<p>
+  <strong>Accessibilityreview:</strong>
+  <%= @education.accessibilityReview %>
+</p>
+
+<p>
+  <strong>Supportrequested:</strong>
+  <%= @education.supportRequested %>
+</p>
+
+<p>
+  <strong>Supportreceived:</strong>
+  <%= @education.supportReceived %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @education.reason %>
+</p>
+
+<p>
+  <strong>Disabilitydeptrating:</strong>
+  <%= @education.disabilityDeptRating %>
+</p>
+
+<p>
+  <strong>Coursedeptrating:</strong>
+  <%= @education.courseDeptRating %>
+</p>
+
+<%= link_to 'Edit', edit_education_path(@education) %> |
+<%= link_to 'Back', educations_path %>

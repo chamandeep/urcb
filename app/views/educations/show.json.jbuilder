@@ -1,0 +1,1 @@
+json.extract! @education, :id, :user_id, :course_id, :university_id, :startDate, :endDate, :accessibilityReview, :supportRequested, :supportReceived, :reason, :disabilityDeptRating, :courseDeptRating, :created_at, :updated_at

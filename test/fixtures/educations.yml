@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  course_id: 1
+  university_id: 1
+  startDate: 2014-02-13
+  endDate: 2014-02-13
+  accessibilityReview: MyText
+  supportRequested: MyText
+  supportReceived: false
+  reason: MyText
+  disabilityDeptRating: 9.99
+  courseDeptRating: 9.99
+
+two:
+  user_id: 1
+  course_id: 1
+  university_id: 1
+  startDate: 2014-02-13
+  endDate: 2014-02-13
+  accessibilityReview: MyText
+  supportRequested: MyText
+  supportReceived: false
+  reason: MyText
+  disabilityDeptRating: 9.99
+  courseDeptRating: 9.99

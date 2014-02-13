@@ -1,0 +1,47 @@
+<h1>Listing educations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Course</th>
+      <th>University</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Accessibilityreview</th>
+      <th>Supportrequested</th>
+      <th>Supportreceived</th>
+      <th>Reason</th>
+      <th>Disabilitydeptrating</th>
+      <th>Coursedeptrating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @educations.each do |education| %>
+      <tr>
+        <td><%= education.user_id %></td>
+        <td><%= education.course_id %></td>
+        <td><%= education.university_id %></td>
+        <td><%= education.startDate %></td>
+        <td><%= education.endDate %></td>
+        <td><%= education.accessibilityReview %></td>
+        <td><%= education.supportRequested %></td>
+        <td><%= education.supportReceived %></td>
+        <td><%= education.reason %></td>
+        <td><%= education.disabilityDeptRating %></td>
+        <td><%= education.courseDeptRating %></td>
+        <td><%= link_to 'Show', education %></td>
+        <td><%= link_to 'Edit', edit_education_path(education) %></td>
+        <td><%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Education', new_education_path %>

@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :educations
+
   resources :universities
 
   resources :courses

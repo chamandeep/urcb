@@ -1,0 +1,61 @@
+<%= form_for(@education) do |f| %>
+  <% if @education.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@education.errors.count, "error") %> prohibited this education from being saved:</h2>
+
+      <ul>
+      <% @education.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :course_id %><br>
+    <%= f.number_field :course_id %>
+  </div>
+  <div class="field">
+    <%= f.label :university_id %><br>
+    <%= f.number_field :university_id %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br>
+    <%= f.date_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br>
+    <%= f.date_select :endDate %>
+  </div>
+  <div class="field">
+    <%= f.label :accessibilityReview %><br>
+    <%= f.text_area :accessibilityReview %>
+  </div>
+  <div class="field">
+    <%= f.label :supportRequested %><br>
+    <%= f.text_area :supportRequested %>
+  </div>
+  <div class="field">
+    <%= f.label :supportReceived %><br>
+    <%= f.check_box :supportReceived %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_area :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :disabilityDeptRating %><br>
+    <%= f.text_field :disabilityDeptRating %>
+  </div>
+  <div class="field">
+    <%= f.label :courseDeptRating %><br>
+    <%= f.text_field :courseDeptRating %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
