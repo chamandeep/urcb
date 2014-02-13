@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @university.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @university.url %>
+</p>
+
+<p>
+  <strong>Disabilityurl:</strong>
+  <%= @university.disabilityURL %>
+</p>
+
+<p>
+  <strong>Disabilitydeptrating:</strong>
+  <%= @university.disabilityDeptRating %>
+</p>
+
+<p>
+  <strong>Coursedeptrating:</strong>
+  <%= @university.courseDeptRating %>
+</p>
+
+<%= link_to 'Edit', edit_university_path(@university) %> |
+<%= link_to 'Back', universities_path %>

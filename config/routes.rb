@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :universities
+
   resources :courses
 
   resources :user_disabilities
