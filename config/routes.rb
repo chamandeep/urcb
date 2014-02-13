@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :friendships
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
