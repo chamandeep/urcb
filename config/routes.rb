@@ -1,4 +1,7 @@
 Urcb::Application.routes.draw do
+  get "pages/home"
+  get "pages/about"
+  get "pages/contact"
   resources :educations
 
   resources :universities
