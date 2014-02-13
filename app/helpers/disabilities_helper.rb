@@ -1,0 +1,2 @@
+module DisabilitiesHelper
+end

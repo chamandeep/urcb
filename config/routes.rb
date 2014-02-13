@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :disabilities
+
   resources :friendships
 
   resources :users
