@@ -1,4 +1,12 @@
 <%# add navigation links to this file %>
+<% if session[:user_id] != nil %>
+<li> <%= link_to_unless_current "userHome", :controller => "users", :action => "home" %> </li>
+<li> <%= link_to_unless_current "Profile",users_path(@user.id) %>
+<li> <%= link_to_unless_current "Logout", :controller => "pages", :action => "logout" %> </li>
+<% else %>
 <li> <%= link_to_unless_current "Home", :controller => "pages", :action => "home" %> </li>
+<li> <%= link_to_unless_current "Login", :controller => "pages", :action => "login" %> </li>
+<li> <%= link_to_unless_current "Register", :controller => "users", :action => "new" %> </li>
+<% end %>
 <li> <%= link_to_unless_current "About Us", :controller => "pages", :action => "about" %> </li>
 <li> <%= link_to_unless_current "Contact Us", :controller => "pages", :action => "contact" %> </li>

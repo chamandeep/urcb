@@ -2,6 +2,9 @@ Urcb::Application.routes.draw do
   get "pages/home"
   get "pages/about"
   get "pages/contact"
+    get "pages/login"
+post "pages/login"
+get "pages/logout"	
   resources :educations
 
   resources :universities
@@ -13,7 +16,7 @@ Urcb::Application.routes.draw do
   resources :disabilities
 
   resources :friendships
-
+get 'users/home'
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
