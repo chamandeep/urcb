@@ -1,7 +1,7 @@
 <%# add navigation links to this file %>
-<% if session[:user_id] != nil %>
+<% if loged_in? %>
 <li> <%= link_to_unless_current "userHome", :controller => "users", :action => "home" %> </li>
-<li> <%= link_to_unless_current "Profile",users_path(@user.id) %>
+<li> <%= link_to_unless_current "Profile", 'current_user' %>
 <li> <%= link_to_unless_current "Logout", :controller => "pages", :action => "logout" %> </li>
 <% else %>
 <li> <%= link_to_unless_current "Home", :controller => "pages", :action => "home" %> </li>

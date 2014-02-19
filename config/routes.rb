@@ -1,10 +1,14 @@
 Urcb::Application.routes.draw do
-  get "pages/home"
+  root 'pages#home'
   get "pages/about"
   get "pages/contact"
     get "pages/login"
 post "pages/login"
 get "pages/logout"	
+
+  resources :sessions, only: [:new, :create, :destroy]
+      match '/login',  to: 'sessions#new',         via: 'get'
+  match '/logout', to: 'sessions#destroy',     via: 'delete'
   resources :educations
 
   resources :universities
@@ -18,7 +22,7 @@ get "pages/logout"
   resources :friendships
 get 'users/home'
   resources :users
-
+  match '/register',  to: 'users#new',            via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
