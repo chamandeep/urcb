@@ -20,5 +20,11 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def logout
+    current_user.update_attribute(:remember_token,
+                                  User.encrypt(User.new_remember_token))
+    cookies.delete(:remember_token)
+    self.current_user = nil
+  end
   
 end

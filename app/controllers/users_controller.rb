@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
           if @user.save
-loged_in @user
+login @user
 flash[:notice] = "You have been logged in"        
 redirect_to @user
       else
