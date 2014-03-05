@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :loged_in_user, only: [:edit, :index, :update]
+  before_action :loged_in_user, only: [:edit, :index, :update, :destroy]
     before_action :correct_user,   only: [:edit, :update]
   # GET /users
   # GET /users.json
@@ -46,16 +46,13 @@ render new
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
   end
 
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
