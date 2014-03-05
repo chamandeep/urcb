@@ -5,7 +5,8 @@ gem 'rails', '4.0.2'
 gem 'faker'
 #gem for password encryption
 gem 'bcrypt-ruby'
-
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
