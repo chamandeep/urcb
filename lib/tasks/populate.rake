@@ -3,10 +3,18 @@ namespace :db do
 desc "Fill database with sample data"
 task populate: :environment do
 make_users
-
+make_posts
 end
 end
 require 'faker'
+
+def make_posts
+  users = User.all(limit: 6)
+  50.times do
+    postText = Faker::Lorem.sentence(5)
+    users.each { |user| user.Posts.create!(postText: postText) }
+  end
+end
 
 def make_users
 User.create!(firstName:     "Example User",

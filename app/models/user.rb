@@ -16,6 +16,7 @@ validates :password, length: { minimum: 6 }
 has_many :Educations
 has_many :Disabilities, through: :UserDisability
 has_many :Friendships
+has_many :Posts, dependent: :destroy
 
 def login!(session)
     session[:user_id] = id

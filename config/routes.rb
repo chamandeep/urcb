@@ -21,6 +21,7 @@ get "pages/logout"
 
   resources :friendships
 get 'users/home'
+  resources :posts, only: [:create, :destroy]
   resources :users
   match '/register',  to: 'users#new',            via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.

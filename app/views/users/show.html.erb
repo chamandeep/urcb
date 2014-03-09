@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 <p> <%= @user.firstName%> </p>
+    <% if @user.Posts.any? %>
+      <h3>Microposts (<%= @user.Posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+
 <p>
   <strong>Firstname:</strong>
    <%= @user.firstName %>
