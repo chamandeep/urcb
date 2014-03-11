@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @post = current_user.Posts.build if signed_in?
+    @post = current_user.Posts.build if loged_in?
   end
 
   def about
