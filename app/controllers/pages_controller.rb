@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @post = current_user.Posts.build if signed_in?
   end
 
   def about

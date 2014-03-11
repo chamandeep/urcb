@@ -20,10 +20,12 @@ get "pages/logout"
   resources :disabilities
 
   resources :friendships
-get 'users/home'
+
   resources :posts, only: [:create, :destroy]
   resources :users
   match '/register',  to: 'users#new',            via: 'get'
+  match '/userhome',  to: 'users#home',            via: 'get'
+  #get 'users/home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

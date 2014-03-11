@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :loged_in_user, only: [:edit, :index, :update, :destroy]
     before_action :correct_user,   only: [:edit, :update]
+    
+    
   # GET /users
   # GET /users.json
   def index
@@ -13,6 +15,7 @@ class UsersController < ApplicationController
   def show
       @user = User.find(params[:id])
           @posts = @user.Posts.paginate(page: params[:page])
+              @post = current_user.Posts.build if loged_in?
   end
 
   # GET /users/new
@@ -65,9 +68,6 @@ render new
       params.require(:user).permit(:firstName, :lastName, :email, :password, :password_confirmation, :userType, :dob, :bio)
     end
     
-        def loged_in_user
-      redirect_to login_url, notice: "Please sign in." unless loged_in?
-    end
 
     def correct_user
       @user = User.find(params[:id])

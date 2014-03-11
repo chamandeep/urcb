@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<%= render 'layouts/newPostForm' %>
+
 <p> <%= @user.firstName%> </p>
     <% if @user.Posts.any? %>
       <h3>Microposts (<%= @user.Posts.count %>)</h3>
