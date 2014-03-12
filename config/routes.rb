@@ -21,7 +21,7 @@ get "pages/logout"
 
   resources :friendships
 
-  resources :posts, only: [:create, :destroy]
+  resources :posts
   resources :users
   match '/register',  to: 'users#new',            via: 'get'
   match '/userhome',  to: 'users#home',            via: 'get'

@@ -58,3 +58,4 @@ group :development do
   gem 'rails_layout'
 end
 ruby '2.0.0'
+gem 'acts_as_commentable'
