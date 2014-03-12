@@ -1,9 +1,9 @@
 class CreateEducations < ActiveRecord::Migration
   def change
     create_table :educations do |t|
-      t.integer :user_id
-      t.integer :course_id
-      t.integer :university_id
+      t.references :User, index: true
+      t.references :Course, index: true
+      t.references :University, index: true
       t.date :startDate
       t.date :endDate
       t.text :accessibilityReview

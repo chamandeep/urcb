@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :educations
+
   root 'pages#home'
   get "pages/about"
   get "pages/contact"
@@ -9,8 +11,6 @@ get "pages/logout"
   resources :sessions, only: [:new, :create, :destroy]
       match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
-  resources :educations
-
   resources :universities
 
   resources :courses

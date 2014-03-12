@@ -18,7 +18,7 @@ class EducationsControllerTest < ActionController::TestCase
 
   test "should create education" do
     assert_difference('Education.count') do
-      post :create, education: { accessibilityReview: @education.accessibilityReview, courseDeptRating: @education.courseDeptRating, course_id: @education.course_id, disabilityDeptRating: @education.disabilityDeptRating, endDate: @education.endDate, reason: @education.reason, startDate: @education.startDate, supportReceived: @education.supportReceived, supportRequested: @education.supportRequested, university_id: @education.university_id, user_id: @education.user_id }
+      post :create, education: { Course_id: @education.Course_id, University_id: @education.University_id, User_id: @education.User_id, accessibilityReview: @education.accessibilityReview, courseDeptRating: @education.courseDeptRating, disabilityDeptRating: @education.disabilityDeptRating, endDate: @education.endDate, reason: @education.reason, startDate: @education.startDate, supportReceived: @education.supportReceived, supportRequested: @education.supportRequested }
     end
 
     assert_redirected_to education_path(assigns(:education))
@@ -35,7 +35,7 @@ class EducationsControllerTest < ActionController::TestCase
   end
 
   test "should update education" do
-    patch :update, id: @education, education: { accessibilityReview: @education.accessibilityReview, courseDeptRating: @education.courseDeptRating, course_id: @education.course_id, disabilityDeptRating: @education.disabilityDeptRating, endDate: @education.endDate, reason: @education.reason, startDate: @education.startDate, supportReceived: @education.supportReceived, supportRequested: @education.supportRequested, university_id: @education.university_id, user_id: @education.user_id }
+    patch :update, id: @education, education: { Course_id: @education.Course_id, University_id: @education.University_id, User_id: @education.User_id, accessibilityReview: @education.accessibilityReview, courseDeptRating: @education.courseDeptRating, disabilityDeptRating: @education.disabilityDeptRating, endDate: @education.endDate, reason: @education.reason, startDate: @education.startDate, supportReceived: @education.supportReceived, supportRequested: @education.supportRequested }
     assert_redirected_to education_path(assigns(:education))
   end
 

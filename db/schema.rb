@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312101427) do
+ActiveRecord::Schema.define(version: 20140312143554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20140312101427) do
   end
 
   create_table "educations", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.integer  "university_id"
+    t.integer  "User_id"
+    t.integer  "Course_id"
+    t.integer  "University_id"
     t.date     "startDate"
     t.date     "endDate"
     t.text     "accessibilityReview"
@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 20140312101427) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "educations", ["Course_id"], name: "index_educations_on_Course_id", using: :btree
+  add_index "educations", ["University_id"], name: "index_educations_on_University_id", using: :btree
+  add_index "educations", ["User_id"], name: "index_educations_on_User_id", using: :btree
 
   create_table "friendships", force: true do |t|
     t.integer  "user_id"
