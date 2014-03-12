@@ -1,5 +1,5 @@
 <li>
-  <span class="content"><%= post.postText %></span>
+  <span class="content"><%= link_to post.postText, post %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
   </span>

@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :loged_in_user
   
+  def show
+    @post = Post.find(params[:id])
+  end
   def create
     @post = current_user.Posts.build(post_params)
     if @post.save
