@@ -10,7 +10,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
 redirect_to current_user
     else
-      render 'pages/home'
+      flash[:error] = 'There was a problem and your post was not created. Please try again.'
+      redirect_to current_user
     end
     
   end
