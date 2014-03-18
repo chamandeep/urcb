@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#posts">Posts</a></li>
+  <li><a href="#education">Education Details</a></li>
+  <li><a href="#">Messages</a></li>
+</ul>
+
+
 <%= render 'layouts/newPostForm' %>
 
 <p> <%= @user.firstName%> </p>
+<div id="posts">>
     <% if @user.Posts.any? %>
       <h3>Microposts (<%= @user.Posts.count %>)</h3>
       <ol class="posts">
@@ -9,7 +17,7 @@
       </ol>
       <%= will_paginate @posts %>
     <% end %>
-
+</div>
 <p>
   <strong>Firstname:</strong>
    <%= @user.firstName %>
@@ -47,3 +55,6 @@
 
 <%= link_to "Edit your profile", edit_user_path(current_user) %>
 
+<div id="education">
+<h1>Education details </h1>
+</div>

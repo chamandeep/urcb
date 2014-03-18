@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :University_id %><br>
-    <%= f.text_field :University_id %>
+    <%= f.collection_select(:University_id, University.all, :id, :name, {prompt: "please select a university"} ) %>
   </div>
   <div class="field">
     <%= f.label :startDate %><br>
