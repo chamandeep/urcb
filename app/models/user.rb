@@ -42,3 +42,7 @@ def login!(session)
 
   
   end
+<<<<<<< HEAD
+=======
+
+>>>>>>> fixUser
