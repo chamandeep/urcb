@@ -3,6 +3,11 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    commentable = @post.create
+comment = commentable.comments.create
+comment.comment = "This is the first comment."
+comment.save
+
   end
   def create
     @post = current_user.Posts.build(post_params)
