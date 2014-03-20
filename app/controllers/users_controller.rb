@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :loged_in_user, only: [:edit, :index, :update, :destroy]
     before_action :correct_user,   only: [:edit, :update]
@@ -6,41 +7,54 @@ class UsersController < ApplicationController
     
   # GET /users
   # GET /users.json
+=======
+  
+
+  
+>>>>>>> fixUser
   def index
         @users = User.paginate(page: params[:page])
   end
 
+<<<<<<< HEAD
   # GET /users/1
-  # GET /users/1.json
+# GET /user s/1.json
   def show
       @user = User.find(params[:id])
           @posts = @user.Posts.paginate(page: params[:page])
               @post = current_user.Posts.build if loged_in?
+=======
+    
+>>>>>>> fixUser
   end
 
-  # GET /users/new
+  
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
+  
   def edit
   end
 
-  # POST /users
-  # POST /users.json
+  
   def create
     @user = User.new(user_params)
 
           if @user.save
 login @user
+<<<<<<< HEAD
 flash[:notice] = "You have been logged in"        
-redirect_to @user
+=======
+
+>>>>>>> fixUser
+
       else
 render new
       end
     end
   
+<<<<<<< HEAD
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
@@ -54,14 +68,15 @@ render new
     User.find(params[:id]).destroy
     flash[:success] = "User deleted."
     redirect_to users_url
-  end
+=======
+    
+
+  
+  
 
  
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
