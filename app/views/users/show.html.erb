@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<<<<<<< HEAD
 <ul class="nav nav-tabs">
   <li class="active"><a href="#posts">Posts</a></li>
   <li><a href="#education">Education Details</a></li>
@@ -12,16 +11,14 @@
 <p> <%= @user.firstName%> </p>
 <div id="posts">>
     <% if @user.Posts.any? %>
-      <h3>Microposts (<%= @user.Posts.count %>)</h3>
+      <h3>Posts (<%= @user.Posts.count %>)</h3>
       <ol class="posts">
         <%= render @posts %>
       </ol>
       <%= will_paginate @posts %>
     <% end %>
 </div>
-=======
 
->>>>>>> fixUser
 <p>
   <strong>Firstname:</strong>
    <%= @user.firstName %>

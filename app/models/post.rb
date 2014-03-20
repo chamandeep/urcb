@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
     validates :postText, presence: true, length: { maximum: 500 }
     #adding comment functionality
-    acts_as_commentable
+    #acts_as_commentable
 end
