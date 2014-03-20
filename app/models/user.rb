@@ -33,6 +33,11 @@ def login!(session)
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+  
+def newsFeed
+    # This is preliminary. See "Following users" for the full implementation.
+    Post.where("user_id = ?", id)
+  end
 
   private
 
@@ -40,5 +45,6 @@ def login!(session)
       self.remember_token = User.encrypt(User.new_remember_token)
     end
 
-  
+
+    
   end

@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
+  
   def home
-    @post = current_user.Posts.build if loged_in?
+    if loged_in?
+    @post = current_user.Posts.build
+          @newsFeed_items = current_user.newsFeed.paginate(page: params[:page])
   end
+end
 
   def about
   end
