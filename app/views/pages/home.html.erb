@@ -1,6 +1,15 @@
-
+<% if loged_in? %>
+<div>
+	<%= render 'layouts/newPostForm' %>
+	
+	<h1>News Feed</h1>
+	<%= render 'layouts/newsFeed' %>
+		</div>
+<% else %>
 <h1>University Resource Centre for the Blind</h1>
 <p>
 Welcome to URCB - the home of networking for students on an informal level. On this website, you will have the opportunity to talk to like-minded students who have a disability and be able to discuss common issues which you are experiencing. As well as this, you will have the opportunity to read articles submitted by students which may help you to achieve something. This will be a student lead website, so your contributions of articles will be very welcome.
 <br />
 To get the most out of this website, please use the link above to register and connect with many students.
+<% end %>
+
