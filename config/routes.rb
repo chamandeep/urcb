@@ -19,8 +19,6 @@ get "pages/logout"
 
   resources :disabilities
 
-  resources :friendships
-
   resources :posts
   resources :users
   match '/register',  to: 'users#new',            via: 'get'
