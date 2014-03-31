@@ -20,11 +20,11 @@ get "pages/logout"
   resources :disabilities
 
   resources :posts
-  resources :users do
   match '/register',  to: 'users#new',            via: 'get'
   match '/userhome',  to: 'users#home',            via: 'get'
   #get 'users/home'
-      member do
+  resources :users do
+        member do
       get :following, :followers
     end
   end
