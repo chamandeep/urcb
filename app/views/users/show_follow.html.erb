@@ -1,0 +1,19 @@
+<% provide(:title, @title) %>
+      <section>
+            <h1><%= @user.firstName + " " + @user.lastName %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Posts:</b> <%= @user.Posts.count %></span>
+    </section>
+    <section>
+      <%= render 'layouts/stats' %>
+      </section>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>
