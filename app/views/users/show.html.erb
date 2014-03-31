@@ -1,13 +1,12 @@
-<p id="notice"><%= notice %></p>
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#posts">Posts</a></li>
-  <li><a href="#education">Education Details</a></li>
-  <li><a href="#">Messages</a></li>
-</ul>
+<section>
+    <%= render 'follow_form' if loged_in? %>
+	
+</section>
 
-
-<%= render 'layouts/newPostForm' %>
-
+	      <section>
+        <%= render 'layouts/stats' %>
+      </section>
+    
 <p> <%= @user.firstName%> </p>
 <div id="posts">>
     <% if @user.Posts.any? %>

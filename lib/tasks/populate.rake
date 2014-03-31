@@ -4,6 +4,8 @@ desc "Fill database with sample data"
 task populate: :environment do
 make_users
 make_posts
+make_friendships
+
 end
 end
 require 'faker'

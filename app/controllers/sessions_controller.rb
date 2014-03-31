@@ -9,12 +9,13 @@ def create
   if @user && @user.authenticate(params[:session][:password])
 login @user
 redirect_to @user
-     else
+  else
         flash.now[:error] = 'Invalid email/password combination'
       render 'new'
 
   end
 end
+
 def destroy
     logout
     redirect_to root_url

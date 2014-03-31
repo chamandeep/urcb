@@ -1,22 +1,30 @@
 class UsersController < ApplicationController
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :loged_in_user, only: [:edit, :index, :update, :destroy]
+  before_action :loged_in_user, only: [:edit, :index, :update, :destroy, :following, :followers]
     before_action :correct_user,   only: [:edit, :update]
     
-    
-  # GET /users
-  # GET /users.json
-
-  def index
-        @users = User.paginate(page: params[:page])
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
   end
 
-
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  
+        def index
+        @users = User.paginate(page: params[:page])
+  end
   
   def show
       @user = User.find(params[:id])
           @posts = @user.Posts.paginate(page: params[:page])
-              @post = current_user.Posts.build if loged_in?
+                        @post = current_user.Posts.build if loged_in?
 
   end
 

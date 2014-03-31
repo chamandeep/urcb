@@ -11,6 +11,8 @@ get "pages/logout"
   resources :sessions, only: [:new, :create, :destroy]
       match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
+    resources :friendships, only: [:create, :destroy]
+
   resources :universities
 
   resources :courses
@@ -19,13 +21,16 @@ get "pages/logout"
 
   resources :disabilities
 
-  resources :friendships
-
   resources :posts
-  resources :users
   match '/register',  to: 'users#new',            via: 'get'
   match '/userhome',  to: 'users#home',            via: 'get'
   #get 'users/home'
+  resources :users do
+        member do
+      get :following, :followers
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
