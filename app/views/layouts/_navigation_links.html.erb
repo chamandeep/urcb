@@ -1,6 +1,6 @@
 <%# add navigation links to this file %>
 <% if loged_in? %>
-<li> <%= link_to_unless_current "userHome", :controller => "users", :action => "home" %> </li>
+<li> <%= link_to_unless_current "Home", :controller => "pages", :action => "home" %> </li>
 <li> <%= link_to_unless_current "Profile", current_user %>
 <li> <%= link_to_unless_current "Logout", logout_path, method: "delete"  %> </li>
 <% else %>
