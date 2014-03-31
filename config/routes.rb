@@ -11,6 +11,8 @@ get "pages/logout"
   resources :sessions, only: [:new, :create, :destroy]
       match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
+    resources :friendships, only: [:create, :destroy]
+
   resources :universities
 
   resources :courses
