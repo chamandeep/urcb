@@ -20,10 +20,15 @@ get "pages/logout"
   resources :disabilities
 
   resources :posts
-  resources :users
+  resources :users do
   match '/register',  to: 'users#new',            via: 'get'
   match '/userhome',  to: 'users#home',            via: 'get'
   #get 'users/home'
+      member do
+      get :following, :followers
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
