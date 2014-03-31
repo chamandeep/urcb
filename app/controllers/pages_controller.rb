@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   
   def home
     if loged_in?
-    @post = current_user.Posts.build
+    @post = current_user.posts.build
           @newsFeed_items = current_user.newsFeed.paginate(page: params[:page])
   end
 end

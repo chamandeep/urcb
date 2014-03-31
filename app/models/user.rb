@@ -16,7 +16,7 @@ validates :password, length: { minimum: 6 }
 has_many :Educations
 has_many :Disabilities, through: :UserDisability
 has_many :Friendships
-has_many :Posts, dependent: :destroy 
+has_many :posts, dependent: :destroy 
  has_many :friendships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :friendships, source: :followed
   
@@ -24,6 +24,8 @@ has_many :Posts, dependent: :destroy
                                    class_name:  "Friendship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_friendships, source: :follower
+
+
   
   def following?(other_user)
     friendships.find_by(followed_id: other_user.id)
@@ -54,9 +56,8 @@ def login!(session)
   end
   
 def newsFeed
-    # This is preliminary. See "Following users" for the full implementation.
-    Post.where("user_id = ?", id)
-  end
+    Post.from_users_followed_by(self)
+    end
 
   private
 
