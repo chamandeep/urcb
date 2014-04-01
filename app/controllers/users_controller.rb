@@ -39,8 +39,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
           if @user.save
 login @user
-redirect_to pages#home
-flash[:notice] = "You have been logged in"        
+redirect_to root_path
+flash[:notice] = "Your account has been registered and you have been loged in successfully."        
       else
 render new
       end

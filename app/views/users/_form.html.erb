@@ -21,10 +21,9 @@
     <%= f.label :password_confirmation %><br>
     <%= f.text_field :password_confirmation %>
   </div>
-  <div class="field">
-    <%= f.label :userType %><br>
-    <%= f.number_field :userType %>
-  </div>
+  
+  	<%= f.hidden_field :userType, :value => "1" %>
+    
   <div class="field">
     <%= f.label :dob %><br>
     <%= f.date_select :dob %>
