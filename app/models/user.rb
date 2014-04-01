@@ -13,9 +13,9 @@ validates :lastName, presence: true
 validates :email, presence: true, uniqueness: {  case_sensative: false }
 validates :password, length: { minimum: 6 }
 
-has_many :Educations
-has_many :Disabilities, through: :UserDisability
-has_many :Friendships
+has_many :educations
+has_many :disabilities, through: :userDisability
+has_many :friendships
 has_many :posts, dependent: :destroy 
  has_many :friendships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :friendships, source: :followed

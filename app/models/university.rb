@@ -1,3 +1,3 @@
 class University < ActiveRecord::Base
-belongs_to :Education
+belongs_to :education
 end
