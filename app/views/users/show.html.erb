@@ -9,8 +9,8 @@
     
 <p> <%= @user.firstName%> </p>
 <div id="posts">>
-    <% if @user.Posts.any? %>
-      <h3>Posts (<%= @user.Posts.count %>)</h3>
+    <% if @user.posts.any? %>
+      <h3>Posts (<%= @user.posts.count %>)</h3>
       <ol class="posts">
         <%= render @posts %>
       </ol>

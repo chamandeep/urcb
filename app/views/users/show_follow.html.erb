@@ -2,7 +2,7 @@
       <section>
             <h1><%= @user.firstName + " " + @user.lastName %></h1>
       <span><%= link_to "view my profile", @user %></span>
-      <span><b>Posts:</b> <%= @user.Posts.count %></span>
+      <span><b>Posts:</b> <%= @user.posts.count %></span>
     </section>
     <section>
       <%= render 'layouts/stats' %>

@@ -23,8 +23,8 @@ class UsersController < ApplicationController
   
   def show
       @user = User.find(params[:id])
-          @posts = @user.Posts.paginate(page: params[:page])
-                        @post = current_user.Posts.build if loged_in?
+          @posts = @user.posts.paginate(page: params[:page])
+                        @post = current_user.posts.build if loged_in?
 
   end
 
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
           if @user.save
 login @user
+redirect_to pages#home
 flash[:notice] = "You have been logged in"        
       else
 render new
