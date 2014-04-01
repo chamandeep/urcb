@@ -24,7 +24,7 @@ has_many :posts, dependent: :destroy
                                    class_name:  "Friendship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_friendships, source: :follower
-
+has_many :articles
 
   
   def following?(other_user)

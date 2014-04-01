@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Author</th>
       <th>Title</th>
       <th>Articletext</th>
       <th>Status</th>
@@ -16,7 +16,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.user %></td>
+        <td><%= article.user.firstName %></td>
         <td><%= article.title %></td>
         <td><%= article.articleText %></td>
         <td><%= article.Status %></td>
