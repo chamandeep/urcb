@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :articles
+
   resources :educations
 
   root 'pages#home'
