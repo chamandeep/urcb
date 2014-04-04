@@ -59,6 +59,10 @@ def newsFeed
     Post.from_users_followed_by(self)
     end
 
+#method for getting the full name
+def full_name
+self.firstName + " " + self.lastName  
+end
   private
 
     def create_remember_token
