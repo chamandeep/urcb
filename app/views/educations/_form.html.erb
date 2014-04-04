@@ -1,47 +1,47 @@
 <%= form_for(@education) do |f| %>
 <%= render 'layouts/errorMessages', object: f.object %>
+
+
+    <%= f.hidden_field :User_id, :value => current_user.id %>
+  
   <div class="field">
-    <%= f.label :User_id %><br>
-    <%= f.text_field :User_id %>
+    <%= f.label :Course_id, "Course:" %><br>
+    <%= f.collection_select(:Course_id, Course.all, :id, :name, {prompt: "please select a university"} ) %>
   </div>
   <div class="field">
-    <%= f.label :Course_id %><br>
-    <%= f.text_field :Course_id %>
-  </div>
-  <div class="field">
-    <%= f.label :University_id %><br>
+    <%= f.label :University_id, "University:" %><br>
     <%= f.collection_select(:University_id, University.all, :id, :name, {prompt: "please select a university"} ) %>
   </div>
   <div class="field">
-    <%= f.label :startDate %><br>
+    <%= f.label :startDate, "Start date:" %><br>
     <%= f.date_select :startDate %>
   </div>
   <div class="field">
-    <%= f.label :endDate %><br>
+    <%= f.label :endDate, "End date:" %><br>
     <%= f.date_select :endDate %>
   </div>
   <div class="field">
-    <%= f.label :accessibilityReview %><br>
+    <%= f.label :accessibilityReview, "Accessibility Review:" %><br>
     <%= f.text_area :accessibilityReview %>
   </div>
   <div class="field">
-    <%= f.label :supportRequested %><br>
+    <%= f.label :supportRequested, "Support Requested:" %><br>
     <%= f.text_area :supportRequested %>
   </div>
   <div class="field">
-    <%= f.label :supportReceived %><br>
+    <%= f.label :supportReceived, "Did you receive this support?" %><br>
     <%= f.check_box :supportReceived %>
   </div>
   <div class="field">
-    <%= f.label :reason %><br>
+    <%= f.label :reason, "If not, what were the reasons?" %><br>
     <%= f.text_area :reason %>
   </div>
   <div class="field">
-    <%= f.label :disabilityDeptRating %><br>
+    <%= f.label :disabilityDeptRating, "Disability department rating from 1 to 5: (Where 1 is very poor and 5 is very good.)" %><br>
     <%= f.text_field :disabilityDeptRating %>
   </div>
   <div class="field">
-    <%= f.label :courseDeptRating %><br>
+    <%= f.label :courseDeptRating, "Rating of course department from 1 to 5: (Where 1 is very poor and 5 is very good.)" %><br>
     <%= f.text_field :courseDeptRating %>
   </div>
   <div class="actions">
