@@ -40,7 +40,7 @@ class UsersController < ApplicationController
           if @user.save
 login @user
 redirect_to root_path
-flash[:notice] = "Your account has been registered and you have been loged in successfully."        
+flash[:success] = "Your account has been registered and you have been loged in successfully."        
       else
 render new
       end
