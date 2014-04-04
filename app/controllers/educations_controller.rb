@@ -23,10 +23,11 @@ class EducationsController < ApplicationController
   end
 
   # POST /educations
-  # POST /educations.json
+  
   def create
     @education = Education.new(education_params)
 if @education.save
+  redirect_to @education
   flash[:success] = "Your account has been registered and you have been loged in successfully."
 else
   render new
