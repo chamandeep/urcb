@@ -23,9 +23,9 @@
   <tbody>
     <% @educations.each do |education| %>
       <tr>
-        <td><%= education.User %></td>
-        <td><%= education.Course %></td>
-        <td><%= education.University %></td>
+        <td><%= education.user %></td>
+        <td><%= education.course %></td>
+        <td><%= education.university.Name %></td>
         <td><%= education.startDate %></td>
         <td><%= education.endDate %></td>
         <td><%= education.accessibilityReview %></td>
