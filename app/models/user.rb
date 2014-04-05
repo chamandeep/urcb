@@ -63,6 +63,11 @@ def newsFeed
 def full_name
 self.firstName + " " + self.lastName  
 end
+
+#method for checking if user is admin
+def admin?
+  self.userType === 3
+  end
   private
 
     def create_remember_token
