@@ -5,7 +5,8 @@
 <ul>
 	<li> Authored by <%= link_to article.user.full_name, article.user %></li>
 	<li> Date published: <%= article.updated_at %></li>
-	<% if current_user.userType===1 || current_user?(user) %>
+	<% if current_user.admin? %>
+		
 <li> Publish status: <%= article.Status %></li>
 <% end %>	
 </ul>
