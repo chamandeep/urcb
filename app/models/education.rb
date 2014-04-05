@@ -1,6 +1,6 @@
 class Education < ActiveRecord::Base
   belongs_to :user
-  belongs_to :uourse
+  belongs_to :course
   belongs_to :university
   
   #validations
