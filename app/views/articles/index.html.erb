@@ -1,33 +1,13 @@
 <h1>Listing articles</h1>
+<%= link_to 'Post a new Article', new_article_path %>
+<% @articles.each do |article| %>
+<h2><%= link_to article.title, article %></h2>
+<ul>
+	<li> Authored by <%= link_to article.user.full_name, article.user %></li>
+	<li> Date published: <%= article.updated_at %></li>
+	<% if current_user.userType===1 || current_user?(user) %>
+<li> Publish status: <%= article.Status %></li>
+<% end %>	
+</ul>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Title</th>
-      <th>Articletext</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.user.firstName %></td>
-        <td><%= article.title %></td>
-        <td><%= article.articleText %></td>
-        <td><%= article.Status %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
