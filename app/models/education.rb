@@ -3,8 +3,8 @@ class Education < ActiveRecord::Base
   belongs_to :course
   belongs_to :university
   
-  #validations
+  #validations  
   
-    validates :University_id, presence: true
-      validates :Course_id, presence: true
+    validates :university_id, presence: true
+      validates :course_id, presence: true
 end
