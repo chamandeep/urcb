@@ -1,3 +1,4 @@
+<% if @educations.any? %>
 <table>
 	<tr>
 		<th>University:</th>
@@ -14,3 +15,8 @@
 </tr>
 <% end %>
 </table>
+<% elsif current_user?(@user) %>
+<p> You currently have no education records. Please click on 'Add new education record' to build your education record.</p>
+<% else %>
+<p> This user currently has no education records. Please check back at a later date to learn about their experiences. </p>
+<% end %>
