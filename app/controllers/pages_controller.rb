@@ -4,14 +4,21 @@ class PagesController < ApplicationController
     if loged_in?
     @post = current_user.posts.build
           @newsFeed_items = current_user.newsFeed.paginate(page: params[:page])
+          @title = "Your Home Page"
+        else
+                    @title = "Home Page"
   end
+  
 end
 
   def about
+    @title = "About Us"
   end
 
   def contact
+    @title = "Contact Us"
   end
+  
 def logout
   @title = "You have been logged out"
             User.logout!(session)

@@ -26,10 +26,12 @@ class UsersController < ApplicationController
           @posts = @user.posts.paginate(page: params[:page])
                         @post = current_user.posts.build if loged_in?
 @educations = @user.educations
+@title = @user.full_name
   end
 
    def new
     @user = User.new
+    @title = "Register New User"
   end
 
     def edit
