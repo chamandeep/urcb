@@ -27,8 +27,8 @@ class EducationsController < ApplicationController
   def create
     @education = Education.new(education_params)
 if @education.save
-  redirect_to @education
-  flash[:success] = "Your account has been registered and you have been loged in successfully."
+  redirect_to current_user
+  flash[:success] = "New education record has been added successfully."
 else
   render new
 end

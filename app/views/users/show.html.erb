@@ -57,6 +57,7 @@
 
 <div id="education">
 <h1>Education details </h1>
-
-
+	<% if current_user?(@user) %>
+<%= link_to "Add new education record.", new_education_path %>
+<% end %>
 </div>
