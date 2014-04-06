@@ -1,64 +1,46 @@
+<h1><%= @user.full_name %> </h1>
+<% if current_user?(@user) %>
+	<%= link_to "Edit your profile", edit_user_path(current_user) %>
+	<% end %>
 <section>
     <%= render 'follow_form' if loged_in? %>
-	
-</section>
-
+	</section>
+	<div id="profile>"
 	      <section>
         <%= render 'layouts/stats' %>
       </section>
-    
-<p> <%= @user.firstName%> </p>
-<div id="posts">>
+      Date of birth: <%= @user.dob %> <br />
+      Personal profile: <%= @user.bio %>
+      <br />
+         </div>
+         
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#educations" data-toggle="tab">Education details</a></li>
+  <li><a href="#posts" data-toggle="tab">Posts</a></li>
+<li><a href="#articles" data-toggle="tab">Articles</a></li>
+</ul>
+
+<!-- Start tabbed div content -->
+<div class="tab-content">
+<div class="tab-pane active" id="educations">
+<h2>Education details </h2>
+	<% if current_user?(@user) %>
+<%= link_to "Add new education record.", new_education_path %>
+<% end %>
+<%= render 'educations' %>
+</div>
+
+<div class="tab-pane" id="posts">
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <h2>Posts (<%= @user.posts.count %>)</h2>
       <ol class="posts">
         <%= render @posts %>
       </ol>
       <%= will_paginate @posts %>
     <% end %>
 </div>
+<div class="tab-pane" id="articles">
+</div>
 
-<p>
-  <strong>Firstname:</strong>
-   <%= @user.firstName %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastName %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Usertype:</strong>
-  <%= @user.userType %>
-</p>
-
-<p>
-  <strong>Dob:</strong>
-  <%= @user.dob %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</p>
-
-<%= link_to "Edit your profile", edit_user_path(current_user) %>
-
-<div id="education">
-<h1>Education details </h1>
-	<% if current_user?(@user) %>
-<%= link_to "Add new education record.", new_education_path %>
-<% end %>
-<%= render 'educations' %>
+<!-- ending tab container div-->
 </div>
