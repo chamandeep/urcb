@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<th>University:</th>
+		<th>Course:</th>
+		<th>Start date:</th>
+		<th>End date:</th>
+	</tr>
+<% @educations.each do |educations| %>
+<tr>
+	<td> <%= link_to educations.university.name, educations.university %> </td>
+	<td> <%= link_to educations.course.name, educations.course %> </td>
+	<td> <%= educations.startDate %> </td>
+	<td> <%= educations.endDate %> </td>
+</tr>
+<% end %>
+</table>

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
           @posts = @user.posts.paginate(page: params[:page])
                         @post = current_user.posts.build if loged_in?
-
+@educations = @user.educations
   end
 
    def new
