@@ -2,15 +2,15 @@
 <%= render 'layouts/errorMessages', object: f.object %>
 
 
-<%= f.hidden_field :User_id, :value => current_user.id %>    
+<%= f.hidden_field :user_id, :value => current_user.id %>    
   
   <div class="field">
-    <%= f.label :Course_id, "Course:" %><br>
-    <%= f.collection_select(:Course_id, Course.all, :id, :name, {prompt: "please select a university"} ) %>
+    <%= f.label :course_id, "Course:" %><br>
+    <%= f.collection_select(:course_id, Course.all, :id, :name, {prompt: "please select a course"} ) %>
   </div>
   <div class="field">
-    <%= f.label :University_id, "University:" %><br>
-    <%= f.collection_select(:University_id, University.all, :id, :name, {prompt: "please select a university"} ) %>
+    <%= f.label :university_id, "University:" %><br>
+    <%= f.collection_select(:university_id, University.all, :id, :name, {prompt: "please select a university"} ) %>
   </div>
   <div class="field">
     <%= f.label :startDate, "Start date:" %><br>

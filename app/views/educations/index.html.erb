@@ -23,7 +23,7 @@
   <tbody>
     <% @educations.each do |education| %>
       <tr>
-        <td><%= education.user %></td>
+        <td><%= education.user.full_name %></td>
         <td><%= education.course %></td>
         <td><%= education.university.Name %></td>
         <td><%= education.startDate %></td>
