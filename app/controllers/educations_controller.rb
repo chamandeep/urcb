@@ -10,6 +10,7 @@ class EducationsController < ApplicationController
   # GET /educations/1
   # GET /educations/1.json
   def show
+    @educations = Education.find(params[:id])
   end
 
   # GET /educations/new
@@ -22,20 +23,16 @@ class EducationsController < ApplicationController
   end
 
   # POST /educations
-  # POST /educations.json
+  
   def create
     @education = Education.new(education_params)
-
-    respond_to do |format|
-      if @education.save
-        format.html { redirect_to @education, notice: 'Education was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @education }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @education.errors, status: :unprocessable_entity }
+if @education.save
+  redirect_to @education
+  flash[:success] = "Your account has been registered and you have been loged in successfully."
+else
+  render new
+end
       end
-    end
-  end
 
   # PATCH/PUT /educations/1
   # PATCH/PUT /educations/1.json
@@ -69,6 +66,6 @@ class EducationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def education_params
-      params.require(:education).permit(:User_id, :Course_id, :University_id, :startDate, :endDate, :accessibilityReview, :supportRequested, :supportReceived, :reason, :disabilityDeptRating, :courseDeptRating)
+      params.require(:education).permit(:user_id, :course_id, :university_id, :startDate, :endDate, :accessibilityReview, :supportRequested, :supportReceived, :reason, :disabilityDeptRating, :courseDeptRating)
     end
 end
