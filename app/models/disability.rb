@@ -1,3 +1,3 @@
 class Disability < ActiveRecord::Base
-has_many :disabilities
+has_many :impairments
 end

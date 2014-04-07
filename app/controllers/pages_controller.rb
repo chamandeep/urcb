@@ -38,6 +38,18 @@ def logout
   end
 end
 
+def find_students
+  #page title
+  @title = "Find Students"
+  @universities = University.all
+  @courses = Course.all
+  @disabilities = Disability.all
+  
+end
+
+def show_students
+  
+end
 private
   def user_params
   params.require(:user).permit(:email, :password)

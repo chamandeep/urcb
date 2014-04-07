@@ -2,6 +2,7 @@
 <% if loged_in? %>
 <li> <%= link_to_unless_current "Home", :controller => "pages", :action => "home" %> </li>
 <li> <%= link_to_unless_current "Profile", current_user %>
+	<li> <%= link_to_unless_current "Find Students", :controller => "pages", :action => "find_students" %> </li>
 <li> <%= link_to_unless_current "Logout", logout_path, method: "delete"  %> </li>
 <% else %>
 <li> <%= link_to_unless_current "Home", :controller => "pages", :action => "home" %> </li>

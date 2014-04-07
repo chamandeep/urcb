@@ -7,6 +7,8 @@ Urcb::Application.routes.draw do
 
   root 'pages#home'
   get "pages/about"
+    get "pages/find_students"
+      get "pages/show_students"
   get "pages/contact"
     get "pages/login"
 post "pages/login"

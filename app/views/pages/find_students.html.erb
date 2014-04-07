@@ -1,0 +1,38 @@
+<h1>Find Students</h1>
+<p>Please select the criteria which you would like to use to find other students on the URCB network. You can either search by university, choose by course or Disability. Use the tabs below to select the search method and then make your selection.</p>
+<ul class="nav nav-tabs">
+	<li class="active"> <a href="#university" data-toggle="tab">University</a></li>
+	<li> <a href="#course" data-toggle="tab">Course</a></li>
+<li> <a href="#disability" data-toggle="tab">Disability</a></li>		
+		</ul>
+
+<div class="tab-content">
+	<div class="tab-pane active" id="university">
+	<h2>Select the university from the list below.</h2>
+	<ul>
+		<% @universities.each do |universities| %>
+		<li> <%= link_to universities.name, universities %>
+			  (<%= universities.educations.count %> Students)</li>
+		<% end %>
+	</ul>
+	</div>
+	<div class="tab-pane" id="course">
+		<h2>Select the course from the list below</h2>
+		<ul>
+			<% @courses.each do |courses| %>
+			<li> <%= link_to courses.name, courses %>
+				
+			(<%= courses.educations.count %> Students)</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="tab-pane" id="disability">
+		<h2>Select a disability from the list below</h2>
+		<ul>
+			<% @disabilities.each do|disabilities| %>
+			<li> <%= link_to disabilities.name, disabilities %>
+							(<%= disabilities.impairments.count %> Students)</li>
+			<% end %>
+		</ul>
+</div>
+</div>
