@@ -1,34 +1,28 @@
 <%= form_for(@impairment) do |f| %>
-  <% if @impairment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@impairment.errors.count, "error") %> prohibited this impairment from being saved:</h2>
-
-      <ul>
-      <% @impairment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= render 'layouts/errorMessages', object: f.object %>
   <div class="field">
-    <%= f.label :disability_id %><br>
-    <%= f.text_field :disability_id %>
+    <%= f.label :disability_id, "Disability:" %><br>
+    <%= f.collection_select(:disability_id, Disability.all, :id, :name, {prompt: "Please select a disability."} ) %>
   </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+  	Please select between 1 and 3 the severity of your visual impairment. If you are blind, 1 means you have no vision and 3 means that you are able to use your vision for orientation and detect objects, but cannot read print.
+<fieldset>
+	<legend>Severity of your Disability:</legend>
+	<%= f.label :severity, "1" %>
+	<%= f.radio_button :severity, :value => "1" %>
+	<%= f.label :severity, "2" %>
+	<%= f.radio_button :severity, :value => "2" %>
+	<%= f.label :severity, "3" %>
+	<%= f.radio_button :severity, :value => "3" %>
+		</fieldset>
+      </div>
   <div class="field">
-    <%= f.label :severity %><br>
-    <%= f.number_field :severity %>
-  </div>
-  <div class="field">
-    <%= f.label :other %><br>
+    <%= f.label :other, "Other information:" %><br>
     <%= f.text_area :other %>
   </div>
   <div class="field">
-    <%= f.label :supportRequired %><br>
+    <%= f.label :supportRequired, "What support do you generally require within an education setting??" %><br>
     <%= f.text_area :supportRequired %>
   </div>
   <div class="actions">
