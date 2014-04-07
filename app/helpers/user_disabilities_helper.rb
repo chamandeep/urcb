@@ -1,2 +1,0 @@
-module UserDisabilitiesHelper
-end

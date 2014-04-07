@@ -19,8 +19,6 @@ get "pages/logout"
 
   resources :courses
 
-  resources :user_disabilities
-
   resources :disabilities
 
   resources :posts
