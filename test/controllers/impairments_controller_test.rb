@@ -18,7 +18,7 @@ class ImpairmentsControllerTest < ActionController::TestCase
 
   test "should create impairment" do
     assert_difference('Impairment.count') do
-      post :create, impairment: { disability_id_id: @impairment.disability_id_id, other: @impairment.other, severity: @impairment.severity, supportRequired: @impairment.supportRequired, user_id_id: @impairment.user_id_id }
+      post :create, impairment: { disability_id: @impairment.disability_id, other: @impairment.other, severity: @impairment.severity, supportRequired: @impairment.supportRequired, user_id: @impairment.user_id }
     end
 
     assert_redirected_to impairment_path(assigns(:impairment))
@@ -35,7 +35,7 @@ class ImpairmentsControllerTest < ActionController::TestCase
   end
 
   test "should update impairment" do
-    patch :update, id: @impairment, impairment: { disability_id_id: @impairment.disability_id_id, other: @impairment.other, severity: @impairment.severity, supportRequired: @impairment.supportRequired, user_id_id: @impairment.user_id_id }
+    patch :update, id: @impairment, impairment: { disability_id: @impairment.disability_id, other: @impairment.other, severity: @impairment.severity, supportRequired: @impairment.supportRequired, user_id: @impairment.user_id }
     assert_redirected_to impairment_path(assigns(:impairment))
   end
 

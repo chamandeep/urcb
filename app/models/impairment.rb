@@ -1,4 +1,4 @@
 class Impairment < ActiveRecord::Base
-  belongs_to :disability_id
-  belongs_to :user_id
+  belongs_to :disability
+  belongs_to :user
 end

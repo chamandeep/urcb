@@ -53,6 +53,6 @@ class ImpairmentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def impairment_params
-      params.require(:impairment).permit(:disability_id_id, :user_id_id, :severity, :other, :supportRequired)
+      params.require(:impairment).permit(:disability_id, :user_id, :severity, :other, :supportRequired)
     end
 end

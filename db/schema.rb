@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407204014) do
+ActiveRecord::Schema.define(version: 20140407205355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 20140407204014) do
   add_index "friendships", ["follower_id"], name: "index_friendships_on_follower_id", using: :btree
 
   create_table "impairments", force: true do |t|
-    t.integer  "disability_id_id"
-    t.integer  "user_id_id"
+    t.integer  "disability_id"
+    t.integer  "user_id"
     t.integer  "severity"
     t.text     "other"
     t.text     "supportRequired"
@@ -98,8 +98,8 @@ ActiveRecord::Schema.define(version: 20140407204014) do
     t.datetime "updated_at"
   end
 
-  add_index "impairments", ["disability_id_id"], name: "index_impairments_on_disability_id_id", using: :btree
-  add_index "impairments", ["user_id_id"], name: "index_impairments_on_user_id_id", using: :btree
+  add_index "impairments", ["disability_id"], name: "index_impairments_on_disability_id", using: :btree
+  add_index "impairments", ["user_id"], name: "index_impairments_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "postText"
