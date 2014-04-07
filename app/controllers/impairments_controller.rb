@@ -24,7 +24,7 @@ class ImpairmentsController < ApplicationController
     @impairment = Impairment.new(impairment_params)
 
     if @impairment.save
-      redirect_to @impairment, notice: 'Impairment was successfully created.'
+      redirect_to current_user, notice: 'Impairment was successfully created.'
     else
       render action: 'new'
     end
