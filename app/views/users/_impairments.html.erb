@@ -1,0 +1,27 @@
+<h2>Impairments</h2>
+<% if current_user?(@user) %>
+<%= link_to "Add new impairment", new_impairment_path  %>
+<% end %>
+<% if @impairments.any? %>
+
+<table>
+	<tr>
+		<th>Impairment</th>
+		<th>Severity</th>
+		<th>Other information</th>
+		<th>Support required</th>
+			</tr>
+			<% @impairments.each do |impairments| %>
+			<tr>
+				<td><%= impairments.disability.name %></td>
+				<td> <%= impairments.severity %></td>
+				<td> <%= impairments.other %></td>
+				<td> <%= impairments.supportRequired %></td>
+			</tr>
+			<% end %>
+</table>
+<% elsif current_user?(@user) %>
+<p>Please add the list of impairments which apply to you. This will enable others to find you with ease. As well as this, you will be able to find other students who may have a similar disability.</p>
+<% else %>
+<p>This user does not have any impairments listed at present.</p>
+<% end %>
