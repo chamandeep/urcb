@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Disability:</strong>
+  <%= @impairment.disability_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @impairment.user_id %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @impairment.severity %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @impairment.other %>
+</p>
+
+<p>
+  <strong>Supportrequired:</strong>
+  <%= @impairment.supportRequired %>
+</p>
+
+<%= link_to 'Edit', edit_impairment_path(@impairment) %> |
+<%= link_to 'Back', impairments_path %>

@@ -1,0 +1,35 @@
+<h1>Listing impairments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Disability</th>
+      <th>User</th>
+      <th>Severity</th>
+      <th>Other</th>
+      <th>Supportrequired</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @impairments.each do |impairment| %>
+      <tr>
+        <td><%= impairment.disability_id %></td>
+        <td><%= impairment.user_id %></td>
+        <td><%= impairment.severity %></td>
+        <td><%= impairment.other %></td>
+        <td><%= impairment.supportRequired %></td>
+        <td><%= link_to 'Show', impairment %></td>
+        <td><%= link_to 'Edit', edit_impairment_path(impairment) %></td>
+        <td><%= link_to 'Destroy', impairment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Impairment', new_impairment_path %>

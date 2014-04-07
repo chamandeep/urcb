@@ -1,4 +1,6 @@
 Urcb::Application.routes.draw do
+  resources :impairments
+
   resources :articles
 
   resources :educations
