@@ -25,9 +25,12 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
           @posts = @user.posts.paginate(page: params[:page])
                         @post = current_user.posts.build if loged_in?
+                        #get user's education records
 @educations = @user.educations
 #list all disabilities for this user.
 @impairments = @user.impairments
+#list all articles submited by this user
+@articles = @user.articles
 @title = @user.full_name
   end
 

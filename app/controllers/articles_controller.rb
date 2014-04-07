@@ -5,16 +5,19 @@ class ArticlesController < ApplicationController
   # GET /articles
   def index
     @articles = Article.all
+    @title = "Listing all Articles"
   end
 
   # GET /articles/1
   def show
     @article = Article.find(params[:id])
+    @title = @article.title
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    @title = "Post New Article"
   end
 
   # GET /articles/1/edit
