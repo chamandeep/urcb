@@ -1,3 +1,3 @@
 class Disability < ActiveRecord::Base
-has_many :disabilities, through: :userDisability
+has_many :disabilities
 end
