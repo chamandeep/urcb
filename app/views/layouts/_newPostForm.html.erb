@@ -1,7 +1,8 @@
   <%= form_for(@post) do |f| %>
   <%= render 'layouts/errorMessages', object: f.object %>
   <div class="field">
-    <%= f.text_area :postText, placeholder: "Create new post..." %>
+  	<%= f.label :postText, "Create new Post." %>
+    <%= f.text_area :postText %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
