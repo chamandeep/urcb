@@ -26,6 +26,7 @@ get "pages/logout"
   resources :disabilities
 
   resources :posts
+resources :post_comments  
   match '/register',  to: 'users#new',            via: 'get'
   match '/userhome',  to: 'users#home',            via: 'get'
   #get 'users/home'

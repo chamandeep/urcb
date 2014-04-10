@@ -16,7 +16,8 @@ validates :password, length: { minimum: 6 }
 has_many :educations
 has_many :impairments
 has_many :friendships
-has_many :posts, dependent: :destroy 
+has_many :posts, dependent: :destroy
+has_many :post_comments, dependent: :destroy 
  has_many :friendships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :friendships, source: :followed
   

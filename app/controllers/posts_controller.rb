@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 #comment = commentable.comments.create
 #comment.comment = "This is the first comment."
 #comment.save
+@title = "Comments"
+@post_comment = current_user.post_comments.build
 
   end
   def create
