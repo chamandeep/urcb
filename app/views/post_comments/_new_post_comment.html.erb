@@ -1,0 +1,9 @@
+<%= form_for(@post_comment) do |f| %>
+  <%= render 'layouts/errorMessages', object: f.object %>
+  <div class="field">
+  	<%= f.hidden_field :post_id, :value => @post.id %>
+  	<%= f.label :comment, "Add comment." %>
+    <%= f.text_area :comment %>
+  </div>
+  <%= f.submit "Comment", class: "btn btn-large btn-primary" %>
+<% end %>

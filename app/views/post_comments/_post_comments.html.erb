@@ -1,0 +1,12 @@
+<br />
+<div id="comments">
+	<% @comments.each do |comments| %>
+	<%= link_to comments.user.full_name, comments.user %>
+	<%= comments.comment %> <br />
+	<span class="timestamp">
+    Posted <%= time_ago_in_words(comments.created_at) %> ago.
+  </span>
+<% end %>
+	
+	
+</div>

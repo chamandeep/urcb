@@ -1,4 +1,15 @@
+<h1><%= link_to @post.user.full_name, @post.user %></h1>
 <%= @post.postText %>
+<br />
+<span class="timestamp">
+    Posted <%= time_ago_in_words(@post.created_at) %> ago.
+  </span>
 <p>
-comment facility will go here.
+</p>
+<h2>Comments (<%= @post.post_comments.count %>)</h2>
+<%= render 'post_comments/post_comments' %>
+<%= render 'post_comments/new_post_comment' %>
+
+<p>
+	<%= @post_comments %>
 </p>
