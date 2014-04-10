@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
 <h1> <%= @article.title %></h1>
-<% if @article.Status < 3 %>
-<%= render 'approve' %>
+<% if current_user.admin? %>
+<ul>
+	<% if @article.Status === 3 %>
+<li>Status: Approved and Published.
+<%= render 'reject' %> </li>
+<% elsif @article.Status == 2 %>
+<li>Status: Rejected. 
+<%= render 'approve' %> </li>
 <% else %>
-<%= render 'reject' %>
+<li>Status: Submitted
+<%= render 'approve' %> </li>
+<% end %>
+</ul>
 <% end %>
 <p>
 	Authored by <%= link_to @article.user.full_name, @article %> <br />
