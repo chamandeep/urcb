@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 <h1> <%= @article.title %></h1>
+<% if @article.Status < 3 %>
+<%= render 'approve' %>
+<% else %>
+<%= render 'reject' %>
+<% end %>
 <p>
 	Authored by <%= link_to @article.user.full_name, @article %> <br />
 Published on <%= @article.updated_at %>
