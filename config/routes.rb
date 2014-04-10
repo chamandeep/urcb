@@ -1,6 +1,4 @@
 Urcb::Application.routes.draw do
-  resources :tests
-
   resources :impairments
 
   resources :articles
