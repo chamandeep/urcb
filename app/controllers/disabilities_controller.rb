@@ -10,6 +10,9 @@ class DisabilitiesController < ApplicationController
   # GET /disabilities/1
   # GET /disabilities/1.json
   def show
+    @disability = Disability.find(params[:id])
+    @title = @disability.name
+    
   end
 
   # GET /disabilities/new

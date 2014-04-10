@@ -12,6 +12,7 @@ class UniversitiesController < ApplicationController
   def show
     @university = University.find(params[:id])
     @students = @university.educations.all
+    @title = @university.name
   end
 
   # GET /universities/new
