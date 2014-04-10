@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @university.name %></h1>
+<%= link_to @university.name + " website (opens in new window)", @university.url, :target => "_blank" %>
+<% if @university.disabilityDeptRating.nil? %>
+<p>This university has not been rated by any students. </p>
+<%else %>
+<p>The disability department at this university has been given a rating of <%= @university.disabilityDepartmentRating %> by <%= @university.education.count %> people.</p>
+<% end %>
+<h2><%= pluralize(@students.count, "student") %> studying at this university</h2>
+<% if @students.any? %>
+<ul>
+<% @students.each do |students| %>
+<li> <%= link_to students.user.full_name, students.user %>
+	<span>Studying</span>
+	<%= link_to students.course.name, students.course %>
+</li>
+<%end %>	
+</ul>
+<br />
 
-<p>
-  <strong>Name:</strong>
-  <%= @university.name %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @university.url %>
-</p>
-
-<p>
-  <strong>Disabilityurl:</strong>
-  <%= @university.disabilityURL %>
-</p>
-
-<p>
-  <strong>Disabilitydeptrating:</strong>
-  <%= @university.disabilityDeptRating %>
-</p>
-
-<p>
-  <strong>Coursedeptrating:</strong>
-  <%= @university.courseDeptRating %>
-</p>
-
+<% else %>
+<p>No students on the network are currently studying at this university.</p>
+<% end %>
 <%= link_to 'Edit', edit_university_path(@university) %> |
 <%= link_to 'Back', universities_path %>
