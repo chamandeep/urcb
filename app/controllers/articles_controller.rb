@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-    before_action :loged_in_user, only: [:edit, :index, :update, :destroy, :following, :followers]
-    before_action :correct_user,   only: [:edit, :update]
+    before_action :loged_in_user, only: [:index, :show, :edit, :destroy, :update]
+    #before_action :correct_user,   only: [:edit, :update]
 
   # GET /articles
   def index
@@ -22,6 +22,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @article = Article.find(params[:id])
+    @title = "Editing Article"
   end
 
   # POST /articles
@@ -37,7 +39,8 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   def update
-    if @article.update(article_params)
+    @article = Article.find(params[:id])
+    if @article.update_attributes(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
     else
       render action: 'edit'
