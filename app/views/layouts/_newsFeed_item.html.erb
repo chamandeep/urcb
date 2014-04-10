@@ -1,11 +1,13 @@
-<li id="<%= newsFeed_item.id %>">
-    <span class="user">
-    <%= link_to newsFeed_item.user.firstName, newsFeed_item.user %>
-  </span>
+<li id="<%= newsFeed_item.id %>" ><h2 class="user">
+    <%= link_to newsFeed_item.user.full_name, newsFeed_item.user %>
+  </h2>
   <span class="postText"><%= newsFeed_item.postText %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(newsFeed_item.created_at) %> ago.
   </span>
+  <% if newsFeed_item.post_comments.any? %>
+  <%= link_to newsFeed_item.post_comments.count, newsFeed_item %>
+  <%end%>
   <% if current_user?(newsFeed_item.user) %>
     <%= link_to "delete", newsFeed_item, method: :delete,
                                      data: { confirm: "You sure?" },
