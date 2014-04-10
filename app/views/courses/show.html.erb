@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
+<h1><%= @course.name %> </h1>
+<p>Qualification: <%= @course.qualification %>. <br />
+	<%= @course.description %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
+<h2>Students studying this course</h2>
+<% if @students.any? %>
+<ul>
+	<% @students.each do |students| %>
+	<li> <%= link_to students.user.full_name, students.user %>
+		<span>Studying at </span><%= link_to students.university.name, students.university %> 
+	</li>
+	<%end %>
+</ul>
+<% else %>
+<p>No students are currently studying this course.</p>
+<% end %>
+<br />
 
-<p>
-  <strong>Qualification:</strong>
-  <%= @course.qualification %>
-</p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
