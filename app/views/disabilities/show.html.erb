@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @disability.name %> </h1>
+<p> <%= @disability.description %> </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @disability.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @disability.description %>
-</p>
-
+<h2>Students who have this impairment</h2>
+<% if @students.any? %>
+<ul>
+	<% @students.each do |students| %>
+		<li> <%= link_to students.user.full_name, students.user %> </li>
+	<% end %>
+</ul>
+<% else %>
+<p>No student on this network has registered with this impairment.</p>
+<% end %>
+<br />
 <%= link_to 'Edit', edit_disability_path(@disability) %> |
 <%= link_to 'Back', disabilities_path %>

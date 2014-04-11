@@ -12,7 +12,7 @@ class DisabilitiesController < ApplicationController
   def show
     @disability = Disability.find(params[:id])
     @title = @disability.name
-    
+@students = @disability.impairments.all    
   end
 
   # GET /disabilities/new
