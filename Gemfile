@@ -59,3 +59,4 @@ group :development do
 end
 ruby '2.0.0'
 gem 'acts_as_commentable'
+gem 'rails_12factor', group: :production
