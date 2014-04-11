@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
-redirect_to current_user
+redirect_to root_url
     else
       flash[:error] = 'There was a problem and your post was not created. Please try again.'
       redirect_to current_user
