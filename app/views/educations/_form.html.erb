@@ -37,13 +37,43 @@
     <%= f.text_area :reason %>
   </div>
   <div class="field">
-    <%= f.label :disabilityDeptRating, "Disability department rating from 1 to 5: (Where 1 is very poor and 5 is very good.)" %><br>
-    <%= f.text_field :disabilityDeptRating %>
-  </div>
+  	<fieldset>
+  		<legend>Disability department rating from 1 to 5: (Where 1 is very poor and 5 is very good.)</legend>
+  		  		<%= f.label :disabilityDeptRating, "1", :value => "1" %>
+<%= f.radio_button :disabilityDeptRating, "1" %>
+
+<%= f.label :disabilityDeptRating, "2", :value => "2" %>
+<%= f.radio_button :disabilityDeptRating, "2" %>
+
+<%= f.label :disabilityDeptRating, "3", :value => "3" %>
+<%= f.radio_button :disabilityDeptRating, "3" %>
+
+<%= f.label :disabilityDeptRating, "4", :value => "4" %>
+<%= f.radio_button :disabilityDeptRating, "4" %>
+
+<%= f.label :disabilityDeptRating, "5", :value => "5" %>
+<%= f.radio_button :disabilityDeptRating, "5" %>  		
+  	</fieldset>
+      </div>
   <div class="field">
-    <%= f.label :courseDeptRating, "Rating of course department from 1 to 5: (Where 1 is very poor and 5 is very good.)" %><br>
-    <%= f.text_field :courseDeptRating %>
-  </div>
+      	<fieldset>
+  		<legend>Course department rating from 1 to 5: (Where 1 is very poor and 5 is very good.)</legend>
+  		<%= f.label :courseDeptRating, "1", :value => "1" %>
+<%= f.radio_button :courseDeptRating, "1" %>
+
+<%= f.label :courseDeptRating, "2", :value => "2" %>
+<%= f.radio_button :courseDeptRating, "2" %>
+
+<%= f.label :courseDeptRating, "3", :value => "3" %>
+<%= f.radio_button :courseDeptRating, "3" %>
+
+<%= f.label :courseDeptRating, "4", :value => "4" %>
+<%= f.radio_button :courseDeptRating, "4" %>
+
+<%= f.label :courseDeptRating, "5", :value => "5" %>
+<%= f.radio_button :courseDeptRating, "5" %>  		
+  	</fieldset>
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>
