@@ -3,7 +3,7 @@
 <% if @university.disabilityDeptRating.nil? %>
 <p>This university has not been rated by any students. </p>
 <%else %>
-<p>The disability department at this university has been given a rating of <%= @university.disabilityDepartmentRating %> by <%= @university.education.count %> people.</p>
+<p>The disability department at this university has been given a rating of <%= @university.disabilityDeptRating %> by <%= pluralize(@university.educations.count, "person") %>.</p>
 <% end %>
 <h2><%= pluralize(@students.count, "student") %> studying at this university</h2>
 <% if @students.any? %>
