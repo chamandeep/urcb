@@ -9,7 +9,8 @@
 <%= render 'approve' %> </li>
 <% else %>
 <li>Status: Submitted
-<%= render 'approve' %> </li>
+<%= render 'approve' %> 
+<%= render 'reject' %> </li>
 <% end %>
 </ul>
 <% end %>
@@ -18,7 +19,7 @@
 Published on <%= @article.updated_at %>
 </p>
 <p>
-	<%= @article.articleText %>
+	<%= sanitize @article.articleText.html_safe %>
 </p>
 <% if current_user?(@article.user) %>
 <%= link_to 'Edit', edit_article_path(@article) %> |

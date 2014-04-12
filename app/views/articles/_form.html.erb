@@ -4,11 +4,11 @@
     <%= f.hidden_field :user_id, :value => current_user.id %>
   
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
+    <%= f.label :title, "Title:"  %>
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :articleText %><br>
+    <%= f.label :articleText, "Article Text:" %>
     <%= f.text_area :articleText %>
   </div>
   
