@@ -12,5 +12,7 @@
 <p>No student on this network has registered with this impairment.</p>
 <% end %>
 <br />
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_disability_path(@disability) %> |
+<% end %>
 <%= link_to 'Back', disabilities_path %>

@@ -20,5 +20,7 @@
 <% else %>
 <p>No students on the network are currently studying at this university.</p>
 <% end %>
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_university_path(@university) %> |
+<% end %>
 <%= link_to 'Back', universities_path %>
