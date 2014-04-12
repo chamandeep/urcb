@@ -5,6 +5,7 @@
 		<th>Course:</th>
 		<th>Start date:</th>
 		<th>End date:</th>
+		<th>View</th>
 		<% if current_user?(@user) %>
 		<th>Edit</th>
 		<% end %>
@@ -15,6 +16,7 @@
 	<td> <%= link_to educations.course.name, educations.course %> </td>
 	<td> <%= educations.startDate %> </td>
 	<td> <%= educations.endDate %> </td>
+	<td> <%= link_to "View Education Record", educations %> </td>
 	<% if current_user?(@user) %>
 	<td><%= link_to "Edit Education Record", edit_education_path(educations) %></td>
 	<% end %>

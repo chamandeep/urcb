@@ -1,43 +1,46 @@
-<p id="notice"><%= notice %></p>
-
+<h1><%= @education.course.name %> at <%= @education.university.name %></h1>
 <p>
-  <strong>User:</strong>
-  <%= @education.user.full_name %>
+  <strong>Student:</strong>
+  <%= link_to @education.user.full_name, @education.user %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @education.course.name %>
+  <%= link_to @education.course.name, @education.course %>
 </p>
 
 <p>
   <strong>University:</strong>
-  <%= @education.university.name %>
+  <%= link_to @education.university.name, @education.university %>
 </p>
 
 <p>
-  <strong>Startdate:</strong>
+  <strong>Start date:</strong>
   <%= @education.startDate %>
 </p>
 
 <p>
-  <strong>Enddate:</strong>
+  <strong>End date:</strong>
   <%= @education.endDate %>
 </p>
 
 <p>
-  <strong>Accessibilityreview:</strong>
+  <strong>Accessibility review:</strong>
   <%= @education.accessibilityReview %>
 </p>
 
 <p>
-  <strong>Supportrequested:</strong>
+  <strong>Support requested:</strong>
   <%= @education.supportRequested %>
 </p>
 
 <p>
-  <strong>Supportreceived:</strong>
-  <%= @education.supportReceived %>
+  <strong>Support received:</strong>
+  <% if @education.supportReceived === false %>
+    No
+    <% else %>
+    Yes
+    <% end %>
 </p>
 
 <p>
@@ -46,14 +49,15 @@
 </p>
 
 <p>
-  <strong>Disabilitydeptrating:</strong>
-  <%= @education.disabilityDeptRating %>
+  <strong>Disability department rating:</strong>
+  <%= @education.disabilityDeptRating %> out of 5
 </p>
 
 <p>
-  <strong>Coursedeptrating:</strong>
-  <%= @education.courseDeptRating %>
+  <strong>Course department rating:</strong>
+  <%= @education.courseDeptRating %> out of 5
 </p>
-
+<% if current_user?(@education.user) %>
 <%= link_to 'Edit', edit_education_path(@education) %> |
-<%= link_to 'Back', educations_path %>
+<% end %>
+<%= link_to 'Back', @education.user %>

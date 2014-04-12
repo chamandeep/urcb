@@ -11,6 +11,7 @@ class EducationsController < ApplicationController
   # GET /educations/1.json
   def show
     @educations = Education.find(params[:id])
+    @title = "Viewing Education Record"
   end
 
   # GET /educations/new
