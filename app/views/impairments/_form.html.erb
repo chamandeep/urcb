@@ -9,12 +9,12 @@
   	Please select between 1 and 3 the severity of your visual impairment. If you are blind, 1 means you have no vision and 3 means that you are able to use your vision for orientation and detect objects, but cannot read print.
 <fieldset>
 	<legend>Severity of your Disability:</legend>
-	<%= f.label :severity, "1" %>
-	<%= f.radio_button :severity, :value => "1" %>
-	<%= f.label :severity, "2" %>
-	<%= f.radio_button :severity, :value => "2" %>
-	<%= f.label :severity, "3" %>
-	<%= f.radio_button :severity, :value => "3" %>
+	<%= f.label :severity, "1", :value => "1" %>
+	<%= f.radio_button :severity, "1" %>
+	<%= f.label :severity, "2", :value => "2" %>
+	<%= f.radio_button :severity, "2" %>
+	<%= f.label :severity, "3", :value => "3" %>
+	<%= f.radio_button :severity, "3" %>
 		</fieldset>
       </div>
   <div class="field">
