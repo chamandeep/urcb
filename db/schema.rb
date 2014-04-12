@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410190856) do
+ActiveRecord::Schema.define(version: 20140412202441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 20140410190856) do
     t.text     "supportRequested"
     t.boolean  "supportReceived"
     t.text     "reason"
-    t.decimal  "disabilityDeptRating", precision: 2, scale: 2
-    t.decimal  "courseDeptRating",     precision: 2, scale: 2
+    t.integer  "disabilityDeptRating"
+    t.integer  "courseDeptRating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,8 +125,8 @@ ActiveRecord::Schema.define(version: 20140410190856) do
     t.string   "name"
     t.text     "url"
     t.text     "disabilityURL"
-    t.decimal  "disabilityDeptRating", precision: 2, scale: 2
-    t.decimal  "courseDeptRating",     precision: 2, scale: 2
+    t.decimal  "disabilityDeptRating", precision: 3, scale: 2
+    t.decimal  "courseDeptRating",     precision: 3, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
