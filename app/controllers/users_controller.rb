@@ -43,13 +43,14 @@ class UsersController < ApplicationController
   end
 
     def create
+      @title = "Register New User"
     @user = User.new(user_params)
           if @user.save
 login @user
 redirect_to root_path
 flash[:success] = "Your account has been registered and you have been loged in successfully."        
       else
-render new
+render action: 'new'
       end
     end
   
