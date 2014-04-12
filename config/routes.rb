@@ -1,7 +1,11 @@
 Urcb::Application.routes.draw do
   resources :impairments
 
-  resources :articles
+  resources :articles do
+    member do
+get :approvedArticles      
+    end
+  end
 
   resources :educations
 

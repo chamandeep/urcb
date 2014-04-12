@@ -4,9 +4,20 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
+    if current_user.admin?
     @articles = Article.all
+    else
+      @articles = Article.where(Status: 3)
+    end
     @title = "Listing all Articles"
   end
+
+#list approved articles
+def approvedArticles
+@title = "Listing all Articles"  
+@articles = Article.find_by_Status(3)
+render 'approvedArticles'
+end
 
   # GET /articles/1
   def show

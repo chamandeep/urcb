@@ -1,0 +1,20 @@
+<h1>Listing articles</h1>
+<%= link_to 'Post a new Article', new_article_path %>
+<% @articles.each do |article| %>
+<h2><%= link_to article.title, article %></h2>
+<ul>
+	<li> Authored by <%= link_to article.user.full_name, article.user %></li>
+	<li> Date published: <%= article.updated_at %></li>
+	<% if current_user.admin? %>
+<% if article.Status === 3 %>
+<li>Status: Approved and Published.</li>
+
+<% elsif article.Status == 2 %>
+<li>Status: Rejected.</li>
+<% else %>
+<li>Status: Submitted.</li>
+<% end %>
+<% end %>	
+</ul>
+<% end %>
+

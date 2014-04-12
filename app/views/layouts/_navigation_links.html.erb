@@ -5,7 +5,7 @@
 	<li> <%= link_to_unless_current "Find Students", :controller => "pages", :action => "find_students" %> </li>
 <li> <%= link_to_unless_current "Browse Articles", articles_path %></li>
 <% if current_user.admin? %>
-<li> <%= link_to_unless_current "Browse Submitted Articles", articles_path %></li>
+
 <% end %>
 <li> <%= link_to_unless_current "Logout", logout_path, method: "delete"  %> </li>
 <% else %>
