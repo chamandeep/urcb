@@ -23,6 +23,7 @@ class EducationsController < ApplicationController
   # GET /educations/1/edit
   def edit
     @educations = Education.find(params[:id])
+    @title = "Editing education record"
   end
 
   # POST /educations
