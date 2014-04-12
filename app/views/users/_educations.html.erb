@@ -5,6 +5,9 @@
 		<th>Course:</th>
 		<th>Start date:</th>
 		<th>End date:</th>
+		<% if current_user?(@user) %>
+		<th>Edit</th>
+		<% end %>
 	</tr>
 <% @educations.each do |educations| %>
 <tr>
@@ -12,6 +15,9 @@
 	<td> <%= link_to educations.course.name, educations.course %> </td>
 	<td> <%= educations.startDate %> </td>
 	<td> <%= educations.endDate %> </td>
+	<% if current_user?(@user) %>
+	<td><%= link_to "Edit Education Record", edit_education_path(educations) %></td>
+	<% end %>
 </tr>
 <% end %>
 </table>

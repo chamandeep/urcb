@@ -10,6 +10,9 @@
 		<th>Severity</th>
 		<th>Other information</th>
 		<th>Support required</th>
+		<% if current_user?(@user) %>
+		<th>Edit</th>
+		<% end %>
 			</tr>
 			<% @impairments.each do |impairments| %>
 			<tr>
@@ -17,6 +20,9 @@
 				<td> <%= impairments.severity %></td>
 				<td> <%= impairments.other %></td>
 				<td> <%= impairments.supportRequired %></td>
+				<% if current_user?(@user) %>
+				<td><%= link_to "Edit Impairment Record", edit_impairment_path(impairments) %> </td>
+				<% end %>
 			</tr>
 			<% end %>
 </table>

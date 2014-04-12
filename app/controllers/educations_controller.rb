@@ -16,10 +16,12 @@ class EducationsController < ApplicationController
   # GET /educations/new
   def new
     @education = Education.new
+    @title = "Add New Education Record"
   end
 
   # GET /educations/1/edit
   def edit
+    @educations = Education.find(params[:id])
   end
 
   # POST /educations
@@ -39,7 +41,7 @@ end
   def update
     respond_to do |format|
       if @education.update(education_params)
-        format.html { redirect_to @education, notice: 'Education was successfully updated.' }
+        format.html { redirect_to current_user, notice: 'Your education record was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
